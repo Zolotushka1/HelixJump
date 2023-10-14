@@ -953,10 +953,10 @@ MonoBehaviour:
   _levelCount: 10
   _additionalScale: 3
   _beam: {fileID: 8128390721677110262, guid: c5b880fd1dae40d4c9bc20b36c48ac36, type: 3}
-  _spawnPlatform: {fileID: -3360427886324302965, guid: 9f2d966e385d1da47a3d6a5becdd20f0, type: 3}
+  _spawnPlatform: {fileID: 6271766106956990976, guid: 9f2d966e385d1da47a3d6a5becdd20f0, type: 3}
   _mainPlatforms:
-  - {fileID: 3009240180473821050, guid: b27007e77a56a8742b9668bbfa27536b, type: 3}
-  - {fileID: 1473659406589830458, guid: fefb635b4bdba7f4c995919174523b48, type: 3}
+  - {fileID: 7346348371264348404, guid: b27007e77a56a8742b9668bbfa27536b, type: 3}
+  - {fileID: 8153409451604200217, guid: fefb635b4bdba7f4c995919174523b48, type: 3}
   _finishPlatform: {fileID: 2671166329882812850, guid: 749513121f0911747a331c3f273f6dfa, type: 3}
 --- !u!4 &936502755
 Transform:
