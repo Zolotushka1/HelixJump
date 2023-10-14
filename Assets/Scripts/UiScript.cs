@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -28,6 +25,8 @@ public class UiScript : MonoBehaviour
         {
             _menuElements[i].SetActive(true);
         }
+        var lvlCount = GameObject.FindGameObjectWithTag("Respawn").GetComponent<SaveSystem>();
+        lvlCount.Save();
     }
 
     public void LvlCounterShow()

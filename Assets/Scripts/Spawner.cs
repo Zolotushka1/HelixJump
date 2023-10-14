@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -15,6 +12,7 @@ public class Spawner : MonoBehaviour
     private float _startAndFinishAdditionalScale = 0.5f;
 
     public float BeamScaleY => _levelCount / 2f + _startAndFinishAdditionalScale + _additionalScale / 2f;
+    
 
     public void Build()
     {
@@ -24,14 +22,14 @@ public class Spawner : MonoBehaviour
         Vector3 spawnPosition = beam.transform.position;
         spawnPosition.y += beam.transform.localScale.y - _additionalScale;
         
-        SpawnPlatform(_spawnPlatform, ref spawnPosition, beam.transform);
+        SpawnPlatform(_spawnPlatform, ref spawnPosition, beam.transform.parent);
         
         for (int i = 0; i < _levelCount; i++)
         {
-            SpawnPlatform(_mainPlatforms[UnityEngine.Random.Range(0, _mainPlatforms.Length)], ref spawnPosition, beam.transform);
+            SpawnPlatform(_mainPlatforms[UnityEngine.Random.Range(0, _mainPlatforms.Length)], ref spawnPosition, beam.transform.parent);
         }
         
-        SpawnPlatform(_finishPlatform, ref spawnPosition, beam.transform);
+        SpawnPlatform(_finishPlatform, ref spawnPosition, beam.transform.parent);
         
         var cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<BallTracking>();
         cam.Check();

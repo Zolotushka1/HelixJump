@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Quaternion = System.Numerics.Quaternion;
 
 public class StartPlatform : Platform
 {
@@ -11,6 +7,6 @@ public class StartPlatform : Platform
 
     private void Awake()
     {
-        Instantiate(_ball, _spawnPoint.position, UnityEngine.Quaternion.identity);
+        Instantiate(_ball, _spawnPoint.position, Quaternion.identity);
     }
 }

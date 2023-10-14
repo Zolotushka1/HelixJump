@@ -1,17 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallJump : MonoBehaviour
 {
     [SerializeField] private float _jumpForce;
-
+    [SerializeField] private AudioClip _bounceSound;
+    
     private Rigidbody _rigidbody;
 
     private void Start()
     {
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = _bounceSound;
+        
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -25,6 +26,8 @@ public class BallJump : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        GetComponent<AudioSource>().Play ();
+        
         if (other.gameObject.TryGetComponent(out PlatformSegment platformSegment))
         {
             _rigidbody.velocity = Vector3.zero;
